@@ -158,7 +158,7 @@ function loginFormSubmit() {
         var username = document.getElementById("login-username").value;
         var password = document.getElementById("login-password").value;
         if (username === getCookie(usernameCookieName) && password === getCookie(passwordCookieName)) {
-            window.location.href = "index.html";
+            window.location.href = "courseware.html";
         } else {
             alert("Incorrect username or password");
         }
