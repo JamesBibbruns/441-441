@@ -228,6 +228,9 @@ function initPage() {
         initRegisterPage();
     } else if (path.includes("login.html")) {
         initLoginPage();
+    } else if (path.includes("courseware.html")) {
+        navigationClick(); // Ensure navigationClick function is called for courseware.html
+        checkCookie(); // Add this line to call checkCookie() when courseware.html loads
     } else {
         navigationClick(); // Ensure navigationClick function is called on other pages
     }
