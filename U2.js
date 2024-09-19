@@ -230,14 +230,32 @@ function initPage() {
         // No checkCookie() for register.html
     } else if (path.includes("login.html")) {
         initLoginPage();
-        // No checkCookie() for login.html
+        checkIfLoggedIn(); // Check if user is logged in before allowing access to other pages
     } else if (path.includes("courseware.html")) {
+        if (!isUserLoggedIn()) {
+            // If user is not logged in, redirect to login page
+            window.location.href = "login.html";
+            return;
+        }
         navigationClick(); // Ensure navigationClick function is called for courseware.html
         checkCookie(); // Call checkCookie() for courseware.html
-    } else if (!path.includes("register.html") && !path.includes("login.html")) {
+    } else {
+        if (!isUserLoggedIn()) {
+            // If user is not logged in, redirect to login page
+            window.location.href = "login.html";
+            return;
+        }
         navigationClick(); // Ensure navigationClick function is called for other pages
         checkCookie(); // Call checkCookie() for pages other than register and login
     }
+}
+
+// Function to check if user is logged in
+function isUserLoggedIn() {
+    // Implement your logic to check if the user is logged in
+    // This could be checking for a cookie, local storage value, or any other method you use to track login status
+    var username = getCookie(usernameCookieName);
+    return username ? true : false;
 }
 
 // Initialize after the page loads
