@@ -936,3 +936,17 @@ button:last-of-type:hover {
 #login-signup-link a{
   color:red;
 }
+
+#website-banner{
+  background-color: #f2f2f2;
+  padding: 10px; 
+  text-align: center;
+}
+.logo-account{
+  width: 100px; 
+  height: 100px;
+  position: relative;
+  top: 0; 
+  left: 0;
+  margin: 0;
+}
